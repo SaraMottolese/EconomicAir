@@ -1,9 +1,12 @@
-package it.epicode.economicair.economicair.model;
+package it.epicode.economicair.model;
+
+import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,14 +18,21 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 @Entity
-public class Aeroporto {
-
+public class Volo {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	private String nome;
-	private String citta;
-	private String nazione;
-	private String codice;
+	/*
+	 * TODO Modificare modello per many to many aeroporto
+	 */
+	@ManyToOne
+	private Aeroporto aeroportoPartenza;
+	
+	@ManyToOne
+	private Aeroporto aeroportoArrivo;
+	
+	private LocalDateTime dataPartenza;
+	private LocalDateTime dataArrivo;
 }

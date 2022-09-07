@@ -1,4 +1,4 @@
-package it.epicode.economicair.economicair;
+package it.epicode.economicair;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

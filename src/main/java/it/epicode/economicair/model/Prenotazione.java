@@ -1,4 +1,4 @@
-package it.epicode.economicair.economicair.model;
+package it.epicode.economicair.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

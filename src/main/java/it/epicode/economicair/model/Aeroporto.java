@@ -1,6 +1,4 @@
-package it.epicode.economicair.economicair.model;
-
-import java.time.LocalDateTime;
+package it.epicode.economicair.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,14 +15,14 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 @Entity
-public class Volo {
-	
+public class Aeroporto {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	private Aeroporto aeroportoPartenza;
-	private Aeroporto aeroportoArrivo;
-	private LocalDateTime dataPartenza;
-	private LocalDateTime dataArrivo;
+	private String nome;
+	private String citta;
+	private String nazione;
+	private String codice;
 }
