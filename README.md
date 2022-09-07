@@ -18,7 +18,7 @@ In particolare:
 - Data e ora di arrivo
 - Ogni aeroporto è una entità di cui vogliamo memorizzare:
 
-## Nome Aeroporto (Es "Aeroporto internazionale Leonardo da Vinci)
+## Nome Aeroporto ("Aeroporto internazionale Leonardo da Vinci)
 - Città (Es "Fiumicino")
 - Nazione (Es "Italia")
 - Codice aeroporto (FCO)
