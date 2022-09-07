@@ -3,7 +3,7 @@ Progetto per il ripasso di fine corso Java Full Stack
 
 ## Table of Contents 
 - [Big picture](#Big-picture)
-
+- [Technologies/Framework](#Technologies/Framework)
 
 ## Big picture
 Si vuole progettare una applicazione per gestire prenotazione dei voli per la compagnia aerea EconomicAir Company.
@@ -43,3 +43,5 @@ Realizza per ogni entità i servizi REST associati e le Collection su Postman pe
 Predisponi una batteria base di test JUnit
 
 Predisponi una serie di dati di test per l'inizializzazione del database sfruttando i metodi offerti dai repository.
+
+## Technologies/Framework
