@@ -10,19 +10,19 @@ Si vuole progettare una applicazione per gestire prenotazione dei voli per la co
 
 In particolare:
 
-Prevedere un catalogo dei voli con i seguenti dati:
+## Prevedere un catalogo dei voli con i seguenti dati:
 
-Aeroporto di partenza
-Aeroporto di arrivo
-Data e ora di partenza
-Data e ora di arrivo
-Ogni aeroporto è una entità di cui vogliamo memorizzare:
+- Aeroporto di partenza
+- Aeroporto di arrivo
+- Data e ora di partenza
+- Data e ora di arrivo
+- Ogni aeroporto è una entità di cui vogliamo memorizzare:
 
-Nome Aeroporto (Es "Aeroporto internazionale Leonardo da Vinci)
-Città (Es "Fiumicino")
-Nazione (Es "Italia")
-Codice aeroporto (FCO)
-Ogni prenotazione ha i seguenti dati:
+## Nome Aeroporto (Es "Aeroporto internazionale Leonardo da Vinci)
+- Città (Es "Fiumicino")
+- Nazione (Es "Italia")
+- Codice aeroporto (FCO)
+- Ogni prenotazione ha i seguenti dati:
 
 Un codice alfanumerico di 6 caratteri (es "AZ7868)
 Il codice del posto di bordo (es "A45")
