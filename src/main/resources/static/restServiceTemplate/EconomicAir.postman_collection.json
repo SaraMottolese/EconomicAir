@@ -1,0 +1,337 @@
+{
+	"info": {
+		"_postman_id": "c60287dc-aa98-43a8-b682-0375d7140253",
+		"name": "EconomicAir",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21022289"
+	},
+	"item": [
+		{
+			"name": "Aeroporto",
+			"item": [
+				{
+					"name": "aggiungi",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\":\"Capodichino\",\n    \"citta\":\"Napoli\",\n    \"nazione\":\"italia\",\n    \"codice\":\"NAP\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/aeroporto/aggiungi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"aeroporto",
+								"aggiungi"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/aeroporto/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"aeroporto",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "aggiorna",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\":\"Capodichino\",\n    \"citta\":\"Napoli\",\n    \"nazione\":\"italia\",\n    \"codice\":\"napule\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/aeroporto/aggiorna/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"aeroporto",
+								"aggiorna",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "elimina",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/aeroporto/elimina/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"aeroporto",
+								"elimina",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Prenotazione",
+			"item": [
+				{
+					"name": "aggiungi",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"codice\" : \"ABC123\",\r\n   \"codicePosto\": \"A27\",\r\n   \"descrizione\" : \"Lato destro, coda\",\r\n   \"costoBiglietto\" : 50.99\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/prenotazione/aggiungi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"prenotazione",
+								"aggiungi"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/prenotazione/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"prenotazione",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "aggiorna",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"codice\" : \"XYZ789\",\r\n   \"codicePosto\": \"Z27\",\r\n   \"descrizione\" : \"Lato destro, centrale\",\r\n   \"costoBiglietto\" : 50.99\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/prenotazione/aggiorna/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"prenotazione",
+								"aggiorna",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "elimina",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/prenotazione/elimina/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"prenotazione",
+								"elimina",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Volo",
+			"item": [
+				{
+					"name": "aggiungi",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"aeroportoPartenza\" : {\r\n        \"nome\":\"Linate\",\r\n        \"citta\":\"Milano\",\r\n        \"nazione\":\"italia\",\r\n        \"codice\":\"MLN\"\r\n    },\r\n    \"aeroportoArrivo\" : {\r\n        \"nome\" : \"Aeroporto Internazionale d'Abruzzo\",\r\n        \"citta\" : \"Pescara\",\r\n        \"nazione\" : \"Italia\",\r\n        \"codice\" : \"PSR\"\r\n    },\r\n    \"dataPartenza\" : \"2022-09-08 10:08:02\",\r\n    \"dataArrivo\" : \"2022-09-08 12:08:02\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/volo/aggiungi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"volo",
+								"aggiungi"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/volo/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"volo",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "aggiorna",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"codice\" : \"XYZ789\",\r\n   \"codicePosto\": \"Z27\",\r\n   \"descrizione\" : \"Lato destro, centrale\",\r\n   \"costoBiglietto\" : 50.99\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/prenotazione/aggiorna/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"prenotazione",
+								"aggiorna",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "elimina",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/volo/elimina/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"volo",
+								"elimina",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

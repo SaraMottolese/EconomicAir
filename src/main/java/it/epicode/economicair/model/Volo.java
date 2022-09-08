@@ -2,11 +2,14 @@ package it.epicode.economicair.model;
 
 import java.time.LocalDateTime;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -27,12 +30,15 @@ public class Volo {
 	/*
 	 * TODO Modificare modello per many to many aeroporto
 	 */
-	@ManyToOne
+	@ManyToOne(cascade = { CascadeType.PERSIST, CascadeType.MERGE })
 	private Aeroporto aeroportoPartenza;
 	
-	@ManyToOne
+	@ManyToOne(cascade = { CascadeType.PERSIST, CascadeType.MERGE })
 	private Aeroporto aeroportoArrivo;
 	
+	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
 	private LocalDateTime dataPartenza;
+	
+	 @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
 	private LocalDateTime dataArrivo;
 }

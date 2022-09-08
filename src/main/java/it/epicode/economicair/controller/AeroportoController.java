@@ -15,39 +15,45 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import it.epicode.economicair.model.Aeroporto;
+import it.epicode.economicair.model.Prenotazione;
 import it.epicode.economicair.service.AeroportoService;
 
 @RestController
 @RequestMapping("/api/aeroporto")
 public class AeroportoController {
-	
+
 	@Autowired
 	private AeroportoService aeroportoService;
-	
+
 	@PostMapping("/aggiungi")
-	public ResponseEntity<Aeroporto> aggiungi(@RequestBody Aeroporto aeroporto){
-		Aeroporto aggiungiAeroporto= aeroportoService.aggiungi(aeroporto);
+	public ResponseEntity<Aeroporto> aggiungi(@RequestBody Aeroporto aeroporto) {
+		Aeroporto aggiungiAeroporto = aeroportoService.aggiungi(aeroporto);
 		return new ResponseEntity<Aeroporto>(aggiungiAeroporto, HttpStatus.CREATED);
-		
+
 	}
-	
+
 	@DeleteMapping("/elimina/{id}")
-	public ResponseEntity<String> elimina(@PathVariable Long id){
+	public ResponseEntity<String> elimina(@PathVariable Long id) {
 		aeroportoService.elimina(id);
 		return new ResponseEntity<String>("Aeroporto eliminato correttamente", HttpStatus.OK);
 	}
-	
+
 	@PutMapping("/aggiorna/{id}")
-	public ResponseEntity<Aeroporto> aggiorna (@RequestBody Aeroporto aeroporto, @PathVariable Long id){
-		Aeroporto updateAeroporto= aeroportoService.aggiornaAeroporto(aeroporto, id);
+	public ResponseEntity<Aeroporto> aggiorna(@RequestBody Aeroporto aeroporto, @PathVariable Long id) {
+		Aeroporto updateAeroporto = aeroportoService.aggiornaAeroporto(aeroporto, id);
 		return new ResponseEntity<Aeroporto>(updateAeroporto, HttpStatus.OK);
 	}
-	
+
 	@GetMapping("/all")
-	public ResponseEntity<Page<Aeroporto>> trovaTutti(Pageable pageable){
-		Page<Aeroporto>listaAeroporti= aeroportoService.getAll(pageable);
+	public ResponseEntity<Page<Aeroporto>> trovaTutti(Pageable pageable) {
+		Page<Aeroporto> listaAeroporti = aeroportoService.getAll(pageable);
 		return new ResponseEntity<Page<Aeroporto>>(listaAeroporti, HttpStatus.OK);
 	}
-	
+
+	@GetMapping("/{id}")
+	public ResponseEntity<Aeroporto> getById(@PathVariable Long id) {
+		Aeroporto aeroporto = aeroportoService.findById(id);
+		return new ResponseEntity<Aeroporto>(aeroporto, HttpStatus.OK);
+	}
 
 }

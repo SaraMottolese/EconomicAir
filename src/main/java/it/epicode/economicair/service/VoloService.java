@@ -41,8 +41,9 @@ public class VoloService {
 	public Volo aggiornaVolo(Volo v, Long id) {
 		Optional<Volo> voloResult = voloRepository.findById(id);
 
-		if (voloResult.isPresent()) {
+		if (voloResult.isPresent()) { 
 			Volo volo = new Volo();
+			volo.setId(voloResult.get().getId());
 			volo.setAeroportoArrivo(v.getAeroportoArrivo());
 			volo.setAeroportoPartenza(v.getAeroportoPartenza());
 			volo.setDataArrivo(v.getDataArrivo());
