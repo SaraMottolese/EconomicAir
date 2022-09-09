@@ -18,22 +18,5 @@ public class EconomicAirApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(EconomicAirApplication.class, args);
 
-		try {
-			FileReader fileReader = new FileReader("src/main/resources/static/FileCSV.csv");
-			List<Aeroporto> aeroporti = new ArrayList<>();
-			aeroporti = MyCsvReader.read(fileReader);
-			stampaAeroporti(aeroporti);
-
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
-
-	static void stampaAeroporti(List<Aeroporto> aeroporti) {
-		for (Aeroporto aeroporto : aeroporti) {
-			System.out.println(aeroporto);
-		}
 	}
 }
