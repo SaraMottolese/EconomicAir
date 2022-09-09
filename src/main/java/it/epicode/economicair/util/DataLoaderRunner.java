@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -20,20 +21,27 @@ public class DataLoaderRunner implements CommandLineRunner {
 	
 	@Autowired
 	private AeroportoService aeroportoService;
+	
+	@Value("${economicair.csvpath}")
+	private String csvPath; 
 
 	@Override
 	public void run(String... args) throws Exception {
+		log.info("caricamento dati da CSV: " + csvPath);
 		try {
-			FileReader fileReader = new FileReader("src/main/resources/static/FileCSV.csv");
+			FileReader fileReader = new FileReader(csvPath);
 			List<Aeroporto> aeroporti = new ArrayList<>();
 			aeroporti = MyCsvReader.read(fileReader);
 			stampaAeroporti(aeroporti);
 
 		} catch (FileNotFoundException e) {
+			log.error("file al path " + csvPath + " non trovato");
 			e.printStackTrace();
 		} catch (IOException e) {
+			log.error("IOException");
 			e.printStackTrace();
 		}
+		log.info("caricamento da CSV completato");
 	}
 
 	private void stampaAeroporti(List<Aeroporto> aeroporti) {
