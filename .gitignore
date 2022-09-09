@@ -1,2 +1,4 @@
 /target/
 /economicair.log
+.settings
+.factorypath
